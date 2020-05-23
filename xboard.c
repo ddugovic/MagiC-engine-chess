@@ -1,4 +1,4 @@
-// xboard.c
+// xboard.c, this is what you get!!!
 
 #include "stdio.h"
 #include "defs.h"
@@ -254,7 +254,7 @@ void XBoard_Loop(S_BOARD *pos, S_SEARCHINFO *info) {
 
 void Console_Loop(S_BOARD *pos, S_SEARCHINFO *info) {
 
-	printf("Welcome to MagiC-engine In Console Mode!\n");
+	printf("Welcome to MagiC-engine version 1.0 in Console Mode!\n");
 	printf("Type help for commands\n\n");
 
 	info->GAME_MODE = CONSOLEMODE;
