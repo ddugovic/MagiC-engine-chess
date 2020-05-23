@@ -190,7 +190,7 @@ void ListBookMoves(U64 polyKey, S_BOARD *board) {
 			tempMove = ConvertPolyMoveToInternalMove(move, board);
 			if(tempMove != NOMOVE) {
 				bookMoves[count++] = tempMove;
-				if(count > MAXBOOKMOVES) break;
+				if(count >= MAXBOOKMOVES) break;
 			}
 		}
 	}
