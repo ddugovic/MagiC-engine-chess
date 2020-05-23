@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
 			XBoard_Loop(pos, info);
 			if(info->quit == TRUE) break;
 			continue;
-		} else if (!strncmp(line, "vice",4))	{
+		} else if (!strncmp(line, "MagiC-engine",4))	{
 			Console_Loop(pos, info);
 			if(info->quit == TRUE) break;
 			continue;
