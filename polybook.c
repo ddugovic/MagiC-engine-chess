@@ -9,7 +9,7 @@ typedef struct {
 	
 } S_POLY_BOOK_ENTRY;
 
-long NumEntries = 0;
+long NumEntries = 0; 
 
 S_POLY_BOOK_ENTRY *entries;
 
