@@ -341,7 +341,7 @@ void SearchPosition(S_BOARD *pos, S_SEARCHINFO *info) {
 		printf("move %s\n",PrMove(bestMove));
 		MakeMove(pos, bestMove);
 	} else {
-		printf("\n\n***!! Vice makes move %s !!***\n\n",PrMove(bestMove));
+		printf("\n\n***!! MagiC-engine makes move %s !!***\n\n",PrMove(bestMove));
 		MakeMove(pos, bestMove);
 		PrintBoard(pos);
 	}
