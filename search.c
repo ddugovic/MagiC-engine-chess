@@ -287,7 +287,7 @@ static int AlphaBeta(int alpha, int beta, int depth, S_BOARD *pos, S_SEARCHINFO 
 }
 
 void SearchPosition(S_BOARD *pos, S_SEARCHINFO *info) {
-
+	
 	int bestMove = NOMOVE;
 	int bestScore = -INFINITE;
 	int currentDepth = 0;
@@ -298,7 +298,7 @@ void SearchPosition(S_BOARD *pos, S_SEARCHINFO *info) {
 
 	//printf("Search depth:%d\n",info->depth);
 
-	// iterative deepening
+	// iterative deepening, starting with 1
 	for( currentDepth = 1; currentDepth <= info->depth; ++currentDepth ) {
 							// alpha	 beta
 		rootDepth = currentDepth;
