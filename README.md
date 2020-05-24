@@ -14,6 +14,8 @@ setboard x will set the position to FEN x
 
 go will have MagiC-engine play against itself
 
+MagiC-engine will use any opening book named "performance" in the same direcgtory 
+
 MagiC-engine has a Lichess.org account -> @MagiC-engine 
 
 # License
