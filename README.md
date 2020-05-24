@@ -18,4 +18,4 @@ MagiC-engine has a Lichess.org account -> @MagiC-engine
 
 # Liscence
 
-Do whatever you want with MagiC-engine. For example, I use it as a tool for learning C.
+Do whatever you want with MagiC-engine. For example, I used it as a tool for learning C.
