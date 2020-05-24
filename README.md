@@ -6,7 +6,7 @@ A simple chess engine written in C. Is UCI compatible. Enjoy!
 
 The user can change MagiC-engine's parameters:
 
-depth x will set MagiC-engine's calculating depth to x ply
+depth x will set MagiC-engine's calculating depth to x moves
 
 time x will set the movetime to x seconds
 
