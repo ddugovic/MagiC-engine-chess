@@ -16,6 +16,6 @@ go will have MagiC-engine play against itself
 
 MagiC-engine has a Lichess.org account -> @MagiC-engine 
 
-# Licence
+# License
 
 Do whatever you want with MagiC-engine. For example, I used it as a tool for learning C.
