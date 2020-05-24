@@ -15,4 +15,4 @@ go will have MagiC-engine play against itself
 
 # Liscence
 
-Do whatever you want with MagiC-engine. For example, I use it as a tool for learning C. 
+Do whatever you want with MagiC-engine. For example, I use it as a tool for learning C. What will you use it for?
