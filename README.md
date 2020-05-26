@@ -26,4 +26,4 @@ I will also add checkmate score!
 
 # License
 
-Do whatever you want with MagiC-engine. For example, I used it as a tool for learning C.
+Do whatever you want with MagiC-engine. For example, I used it as a tool for learning C. Version 2 is coming soon!
