@@ -18,6 +18,10 @@ MagiC-engine will use any opening book named "performance" in the same directory
 
 MagiC-engine has a Lichess.org account -> @MagiC-engine 
 
+# Future Plans
+
+I will try to improve the evaluation function to make it use its time better.
+
 # License
 
 Do whatever you want with MagiC-engine. For example, I used it as a tool for learning C.
