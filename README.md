@@ -22,6 +22,8 @@ MagiC-engine has a Lichess.org account -> @MagiC-engine
 
 I will try to improve the evaluation function to make it use its time better.
 
+I will also add checkmate score!
+
 # License
 
 Do whatever you want with MagiC-engine. For example, I used it as a tool for learning C.
