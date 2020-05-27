@@ -20,9 +20,9 @@ MagiC-engine has a Lichess.org account -> @MagiC-engine
 
 # Future Plans
 
-I will try to improve the evaluation function to make it use its time better.
+I will try to improve the evaluation function to make it use its time better, as well as create a checkmate score. 
 
-I will also add checkmate score!
+Version 2 is now in active development!
 
 # License
 
