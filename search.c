@@ -2,12 +2,13 @@
 
 #include "stdio.h"
 #include "defs.h"
-
-
+// Null Move Pruning Values
+const int R = 2;
+const int minDepth = 3;
 int rootDepth;
 
 static void CheckUp(S_SEARCHINFO *info) {
-	// .. check if time up, or interrupt from GUI
+	// .. check if time up, or interrupt from GUI (currently, engine flags a lot of games due to slow/inefficient searching)
 	if(info->timeset == TRUE && GetTimeMs() > info->stoptime) {
 		info->stopped = TRUE;
 	}
@@ -188,9 +189,9 @@ static int AlphaBeta(int alpha, int beta, int depth, S_BOARD *pos, S_SEARCHINFO 
 		return Score;
 	}
 
-	if( DoNull && !InCheck && pos->ply && (pos->bigPce[pos->side] > 0) && depth >= 4) {
+	if( DoNull && !InCheck && pos->ply && (pos->bigPce[pos->side] > 0) && depth >= minDepth) {
 		MakeNullMove(pos);
-		Score = -AlphaBeta( -beta, -beta + 1, depth-4, pos, info, FALSE);
+		Score = -AlphaBeta( -beta, -beta + 1, depth - 1 - R, pos, info, FALSE);
 		TakeNullMove(pos);
 		if(info->stopped == TRUE) {
 			return 0;
@@ -224,6 +225,9 @@ static int AlphaBeta(int alpha, int beta, int depth, S_BOARD *pos, S_SEARCHINFO 
 		}
 	}
 
+	int FoundPv = FALSE;
+	// start search
+
 	for(MoveNum = 0; MoveNum < list->count; ++MoveNum) {
 
 		PickNextMove(MoveNum, list);
@@ -233,7 +237,16 @@ static int AlphaBeta(int alpha, int beta, int depth, S_BOARD *pos, S_SEARCHINFO 
         }
 
 		Legal++;
-		Score = -AlphaBeta( -beta, -alpha, depth-1, pos, info, TRUE);
+		// pvs
+		if (FoundPv == TRUE) {
+			Score = -AlphaBeta( -alpha - 1, -alpha, depth-1, pos, info, TRUE);
+			if (Score > alpha && Score < beta) {
+				Score = -AlphaBeta( -beta, -alpha, depth-1, pos, info, TRUE);
+			}
+		} else {
+			Score = -AlphaBeta( -beta, -alpha, depth-1, pos, info, TRUE);
+		}
+
 		TakeMove(pos);
 
 		if(info->stopped == TRUE) {
@@ -258,6 +271,7 @@ static int AlphaBeta(int alpha, int beta, int depth, S_BOARD *pos, S_SEARCHINFO 
 
 					return beta;
 				}
+				FoundPv = TRUE;
 				alpha = Score;
 
 				if(!(list->moves[MoveNum].move & MFLAGCAP)) {
@@ -287,7 +301,7 @@ static int AlphaBeta(int alpha, int beta, int depth, S_BOARD *pos, S_SEARCHINFO 
 }
 
 void SearchPosition(S_BOARD *pos, S_SEARCHINFO *info) {
-	
+
 	int bestMove = NOMOVE;
 	int bestScore = -INFINITE;
 	int currentDepth = 0;
@@ -298,7 +312,7 @@ void SearchPosition(S_BOARD *pos, S_SEARCHINFO *info) {
 
 	//printf("Search depth:%d\n",info->depth);
 
-	// iterative deepening, starting with 1
+	// iterative deepening
 	for( currentDepth = 1; currentDepth <= info->depth; ++currentDepth ) {
 							// alpha	 beta
 		rootDepth = currentDepth;
