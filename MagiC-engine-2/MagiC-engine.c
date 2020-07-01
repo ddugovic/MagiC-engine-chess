@@ -1,4 +1,4 @@
-// seeChess.c
+// MagiC-engine.c
 
 #include "stdio.h"
 #include "defs.h"
