@@ -9,6 +9,7 @@ I really enjoyed writing my own chess program as I was able to combine two of my
 hobbies: chess and programming. 
 
 MagiC-engine has a Lichess.org account -> @MagiC-engine 
+See you over the board!!!
 
 # Future Plans
 
