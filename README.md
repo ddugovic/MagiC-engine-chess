@@ -1,6 +1,6 @@
-# MagiC-engine v1.0
+# MagiC-engine
 
-A simple chess engine written in C. Is UCI compatible. Enjoy!
+A Winboard and UCI compatible chess engine written in C. 
 
 # Why?
 
@@ -12,12 +12,7 @@ MagiC-engine has a Lichess.org account -> @MagiC-engine
 
 See you over the board!!!
 
-# Future Plans
-
-I will try to improve the evaluation function to make it use its time better, as well as create a score that measures
-distance-to-mate.
-
-Version 2 is now in active development!
+# Version 2 has been released!
 
 # License
 
